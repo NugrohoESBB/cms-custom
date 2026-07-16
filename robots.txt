@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://cmscustom-demo.netlify.app/sitemap.xml
