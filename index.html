@@ -8,29 +8,19 @@
 		<meta name="keywords" content="toko tanaman hias depok, jual tanaman hias, pot tanaman, monstera, sansevieria" />
 		<meta name="robots" content="index, follow" />
 
-		<!-- Open Graph (biar tampilan bagus kalau di-share ke WhatsApp/Facebook) -->
 		<meta property="og:title" content="AKAR. — Tanaman & Pot | Kirim Cepat 24 Jam" />
 		<meta property="og:description" content="Toko tanaman hias dan pot rumahan di Depok. Pengiriman cepat, tanaman sehat, konsultasi gratis." />
 		<meta property="og:type" content="website" />
 		<meta property="og:url" content="https://cmscustom-demo.netlify.app/" />
 		<meta property="og:image" content="https://cmscustom-demo.netlify.app/assets/og-image.jpg" />
 
-		<!-- Canonical URL -->
 		<link rel="canonical" href="https://cmscustom-demo.netlify.app/" />
-
-		<!-- Fonts -->
-		<!-- <link rel="preconnect" href="https://fonts.googleapis.com" /> -->
-		<!-- <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" /> -->
 		<link href="assets/vendor/font/fonts.css" rel="stylesheet" />
 
-		<!-- Tailwind -->
-		<script src="https://cdn.tailwindcss.com"></script>
-
-		<!-- Another Library -->
 		<link rel="stylesheet" href="assets/vendor/aos/aos.css" />
 		<link rel="stylesheet" href="assets/vendor/swiper/swiper-bundle.min.css" />
 		<link rel="stylesheet" href="assets/vendor/sweetalert2/sweetalert2.min.css" />
-		<!-- <script src="https://unpkg.com/lucide@latest"></script> -->
+		<script src="https://cdn.tailwindcss.com"></script>
 		<script src="assets/vendor/lucide/lucide.js"></script>
 		<script src="assets/vendor/html2canvas/html2canvas.min.js"></script>
 		<script src="assets/vendor/jspdf/jspdf.umd.min.js"></script>
@@ -99,7 +89,6 @@
 				color: #fff;
 			}
 
-			/* focus visibility */
 			a:focus-visible,
 			button:focus-visible,
 			input:focus-visible,
@@ -118,7 +107,6 @@
 				}
 			}
 
-			/* torn perforation edge for the invoice / plant tag */
 			.torn-edge {
 				position: relative;
 			}
@@ -163,7 +151,6 @@
 				transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 			}
 
-			/* counter animation targets */
 			.qty-value {
 				display: inline-block;
 				min-width: 1.5ch;
@@ -258,18 +245,12 @@
 	<body class="font-body text-ink antialiased flex flex-col min-h-screen">
 		<div class="grain"></div>
 
-		<!-- <div id="app-flex-wrap" class="flex-1 flex flex-col"> -->
 		<div id="app-flex-wrap" class="flex-1 flex flex-col min-h-screen">
-			<!-- ============ TOP ANNOUNCEMENT ============ -->
-			<!-- <div class="bg-forest text-cream text-center text-xs md:text-sm py-2 px-4 font-medium tracking-wide">Gratis konsultasi perawatan tanaman • Pesan sebelum jam 14.00 dikirim hari ini</div> -->
-
 			<!-- ============ NAVBAR ============ -->
-			<!-- <header class="sticky top-0 z-30 bg-cream border-b border-sand"> -->
 			<header id="site-header" class="sticky top-0 z-30 bg-cream border-b border-sand transition-transform duration-300">
 				<div class="max-w-7xl mx-auto px-4 sm:px-5 md:px-8 h-16 sm:h-20 flex items-center justify-between">
 					<a href="#" class="font-display text-2xl md:text-3xl font-semibold tracking-tight text-forest" onclick="goPage('home')">AKAR<span class="text-terracotta">.</span></a>
 
-					<!-- <nav class="hidden md:flex items-center gap-2 text-sm font-medium text-ink/80"> -->
 					<nav class="hidden md:flex items-center gap-2 text-sm font-medium">
 						<a href="#katalog" class="relative px-4 py-2 rounded-full text-ink/80 hover:text-forest hover:bg-sand transition-all duration-300">Katalog</a>
 						<a href="#area-kirim" class="relative px-4 py-2 rounded-full text-ink/80 hover:text-forest hover:bg-sand transition-all duration-300">Area Kirim</a>
@@ -289,12 +270,7 @@
 				</div>
 			</header>
 
-			<!-- ============================================================ -->
-			<!-- PAGE: HOME -->
-			<!-- ============================================================ -->
 			<main id="page-home" x-page class="active flex-1">
-				<!-- HERO -->
-				<!-- <section class="bg-cream relative overflow-hidden isolate min-h-screen flex items-start"> -->
 				<section class="bg-cream relative overflow-hidden isolate md:min-h-screen flex items-start">
 					<div class="max-w-7xl mx-auto px-5 md:px-8 pt-24 md:pt-28 pb-14 grid md:grid-cols-2 gap-10 items-center w-full">
 						<div data-aos="fade-up">
@@ -348,22 +324,6 @@
 							</div>
 						</div>
 
-						<!-- <div data-aos="fade-left" data-aos-delay="150" class="relative">
-							<div class="grid grid-cols-2 gap-3 sm:gap-4">
-								<div class="rounded-3xl overflow-hidden shadow-lg">
-									<img src="https://picsum.photos/seed/akar-hero1/500/500" class="hero-grid-img w-full h-[160px] sm:h-[220px] md:h-[260px] object-cover" alt="Monstera dalam pot tanah liat" />
-								</div>
-								<div class="rounded-3xl overflow-hidden shadow-lg mt-6 sm:mt-8">
-									<img src="https://picsum.photos/seed/akar-hero2/500/500" class="hero-grid-img w-full h-[160px] sm:h-[220px] md:h-[260px] object-cover" alt="Koleksi pot tanaman hias" />
-								</div>
-								<div class="rounded-3xl overflow-hidden shadow-lg -mt-6 sm:-mt-8">
-									<img src="https://picsum.photos/seed/akar-hero3/500/500" class="hero-grid-img w-full h-[160px] sm:h-[220px] md:h-[260px] object-cover" alt="Sudut ruangan dengan tanaman hijau" />
-								</div>
-								<div class="rounded-3xl overflow-hidden shadow-lg">
-									<img src="https://picsum.photos/seed/akar-hero4/500/500" class="hero-grid-img w-full h-[160px] sm:h-[220px] md:h-[260px] object-cover" alt="Rak tanaman hias dalam ruangan" />
-								</div>
-							</div>
-						</div> -->
 						<div data-aos="fade-left" data-aos-delay="150" class="relative hidden md:block">
 							<div class="grid grid-cols-2 gap-3 sm:gap-4">
 								<div class="rounded-3xl overflow-hidden shadow-lg">
@@ -383,12 +343,9 @@
 					</div>
 				</section>
 
-				<!-- KATALOG -->
 				<section id="katalog" class="bg-sand/40 scroll-mt-16 sm:scroll-mt-20">
 					<div class="max-w-7xl mx-auto px-5 md:px-8 pt-6 pb-10 md:pb-16">
-						<div class="flex gap-3 overflow-x-auto pb-2 mb-6 no-scrollbar" id="category-strip">
-							<!-- injected by JS -->
-						</div>
+						<div class="flex gap-3 overflow-x-auto pb-2 mb-6 no-scrollbar" id="category-strip"></div>
 
 						<div class="flex items-end justify-between mb-8" data-aos="fade-up">
 							<div>
@@ -398,13 +355,10 @@
 							<p class="text-sm text-muted hidden sm:block" id="product-count-label">8 produk</p>
 						</div>
 
-						<div id="product-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-6 max-w-[1600px] mx-auto">
-							<!-- injected by JS -->
-						</div>
+						<div id="product-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-6 max-w-[1600px] mx-auto"></div>
 					</div>
 				</section>
 
-				<!-- BANNER PERAWATAN -->
 				<section class="bg-cream">
 					<div class="max-w-7xl mx-auto px-5 md:px-8 py-16 md:py-24">
 						<div class="text-center mb-12" data-aos="fade-up">
@@ -413,7 +367,6 @@
 							<p class="text-muted max-w-xl mx-auto leading-relaxed">Empat hal ini yang bikin pelanggan kami balik lagi setiap kali butuh tanaman atau pot baru.</p>
 						</div>
 
-						<!-- <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5"> -->
 						<div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-5">
 							<div class="bg-white/60 border border-sand/60 rounded-3xl p-6" data-aos="fade-up">
 								<div class="flex items-center justify-between mb-5">
@@ -462,71 +415,13 @@
 					</div>
 				</section>
 
-				<!-- TENTANG -->
-				<!-- <section id="tentang" class="bg-sand/40 scroll-mt-16 sm:scroll-mt-20">
-					<div class="max-w-7xl mx-auto px-5 md:px-8 py-16 md:py-24 grid md:grid-cols-2 gap-10 md:gap-12 items-center">
-						<div data-aos="fade-right" class="grid grid-cols-2 gap-3 sm:gap-4">
-							<div class="rounded-3xl overflow-hidden shadow-lg">
-								<img src="https://picsum.photos/seed/akar-about1/500/500" class="hero-grid-img w-full h-[150px] sm:h-[200px] md:h-[230px] object-cover" alt="Pemilik kebun AKAR merawat tanaman" />
-							</div>
-							<div class="rounded-3xl overflow-hidden shadow-lg mt-6 sm:mt-8">
-								<img src="https://picsum.photos/seed/akar-about2/500/500" class="hero-grid-img w-full h-[150px] sm:h-[200px] md:h-[230px] object-cover" alt="Proses pembibitan tanaman hias" />
-							</div>
-							<div class="rounded-3xl overflow-hidden shadow-lg -mt-6 sm:-mt-8">
-								<img src="https://picsum.photos/seed/akar-about3/500/500" class="hero-grid-img w-full h-[150px] sm:h-[200px] md:h-[230px] object-cover" alt="Mitra petani memeriksa tanaman" />
-							</div>
-							<div class="rounded-3xl overflow-hidden shadow-lg">
-								<img src="https://picsum.photos/seed/akar-about4/500/500" class="hero-grid-img w-full h-[150px] sm:h-[200px] md:h-[230px] object-cover" alt="Pengemasan tanaman sebelum dikirim" />
-							</div>
-						</div>
-						<div data-aos="fade-left">
-							<p class="uppercase tracking-[0.2em] text-xs font-semibold text-terracotta mb-3">Tentang AKAR.</p>
-							<h2 class="font-display text-3xl md:text-4xl text-forest-dark mb-5 leading-tight">Dari kebun kecil di pinggir kota, untuk rumah Anda.</h2>
-							<p class="text-muted leading-relaxed mb-4">AKAR. dimulai dari kebun rumahan seluas 200m² di Depok, ketika rasa penasaran terhadap tanaman hias berubah menjadi kebiasaan yang tak terelakkan. Yang awalnya hanya koleksi pribadi, perlahan tumbuh menjadi usaha kecil yang melayani tetangga, lalu teman-teman dari komunitas pecinta tanaman.</p>
-							<p class="text-muted leading-relaxed mb-4">Kini kami bekerja sama dengan lebih dari 15 petani tanaman hias lokal di sekitar Depok dan sekitarnya untuk menghadirkan koleksi terbaik — mulai dari tanaman indoor populer, pot tanah liat buatan tangan, hingga perlengkapan perawatan harian. Setiap tanaman diperiksa kondisinya sebelum dikirim, dan setiap pot dipilih bukan sekadar sebagai wadah, tapi sebagai bagian dari estetika ruang Anda.</p>
-							<p class="text-muted leading-relaxed mb-6">Kami percaya merawat tanaman bukan soal punya "tangan hijau" bawaan, tapi soal mau belajar dan konsisten. Karena itu, tim kami selalu siap membantu lewat konsultasi gratis via WhatsApp — mulai dari memilih tanaman yang cocok untuk pemula, sampai mengatasi daun yang mulai menguning.</p>
-
-							<div class="flex flex-col gap-3 mb-8 border-l-2 border-terracotta/30 pl-5">
-								<div class="flex items-start gap-2.5">
-									<i data-lucide="sprout" class="w-4 h-4 text-terracotta mt-0.5 shrink-0"></i>
-									<p class="text-sm text-ink/80"><span class="font-semibold text-forest-dark">Dari petani lokal</span> — bukan lewat distributor besar</p>
-								</div>
-								<div class="flex items-start gap-2.5">
-									<i data-lucide="hand-heart" class="w-4 h-4 text-terracotta mt-0.5 shrink-0"></i>
-									<p class="text-sm text-ink/80"><span class="font-semibold text-forest-dark">Dirawat dengan tangan</span> — bukan produksi massal</p>
-								</div>
-								<div class="flex items-start gap-2.5">
-									<i data-lucide="badge-check" class="w-4 h-4 text-terracotta mt-0.5 shrink-0"></i>
-									<p class="text-sm text-ink/80"><span class="font-semibold text-forest-dark">Kualitas terjamin</span> — diperiksa sebelum dikirim</p>
-								</div>
-							</div>
-
-							<div class="flex gap-8">
-								<div>
-									<p class="font-display text-3xl text-forest">15+</p>
-									<p class="text-xs text-muted mt-1">Mitra petani</p>
-								</div>
-								<div>
-									<p class="font-display text-3xl text-forest">1.200+</p>
-									<p class="text-xs text-muted mt-1">Pesanan terkirim</p>
-								</div>
-								<div>
-									<p class="font-display text-3xl text-forest">4.9/5</p>
-									<p class="text-xs text-muted mt-1">Rating pelanggan</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</section> -->
 				<section id="tentang" class="bg-sand/40 scroll-mt-16 sm:scroll-mt-20">
 					<div class="max-w-7xl mx-auto px-5 md:px-8 py-16 md:py-24 flex flex-col md:grid md:grid-cols-2 gap-10 md:gap-12 md:items-center">
-						<!-- BLOK 1: Label + Judul -->
 						<div class="order-1 md:order-2">
 							<p class="uppercase tracking-[0.2em] text-xs font-semibold text-terracotta mb-3">Tentang AKAR.</p>
 							<h2 class="font-display text-3xl md:text-4xl text-forest-dark leading-tight md:mb-5">Dari kebun kecil di pinggir kota, untuk rumah Anda.</h2>
 						</div>
 
-						<!-- BLOK 2: Foto -->
 						<div data-aos="fade-right" class="order-2 md:order-1 md:row-span-2 grid grid-cols-2 gap-3 sm:gap-4 mt-6 md:mt-0">
 							<div class="rounded-3xl overflow-hidden shadow-lg">
 								<img src="https://picsum.photos/seed/akar-about1/500/500" class="hero-grid-img w-full h-[150px] sm:h-[200px] md:h-[230px] object-cover" alt="Pemilik kebun AKAR merawat tanaman" />
@@ -542,7 +437,6 @@
 							</div>
 						</div>
 
-						<!-- BLOK 3: Sisa teks + list + stats -->
 						<div data-aos="fade-left" class="order-3 md:order-2 mt-6 md:mt-0">
 							<p class="text-muted leading-relaxed mb-4">AKAR. dimulai dari kebun rumahan seluas 200m² di Depok, ketika rasa penasaran terhadap tanaman hias berubah menjadi kebiasaan yang tak terelakkan. Yang awalnya hanya koleksi pribadi, perlahan tumbuh menjadi usaha kecil yang melayani tetangga, lalu teman-teman dari komunitas pecinta tanaman.</p>
 							<p class="text-muted leading-relaxed mb-4">Kini kami bekerja sama dengan lebih dari 15 petani tanaman hias lokal di sekitar Depok dan sekitarnya untuk menghadirkan koleksi terbaik — mulai dari tanaman indoor populer, pot tanah liat buatan tangan, hingga perlengkapan perawatan harian. Setiap tanaman diperiksa kondisinya sebelum dikirim, dan setiap pot dipilih bukan sekadar sebagai wadah, tapi sebagai bagian dari estetika ruang Anda.</p>
@@ -581,7 +475,6 @@
 					</div>
 				</section>
 
-				<!-- AREA PENGIRIMAN -->
 				<section id="area-kirim" class="bg-cream relative overflow-hidden scroll-mt-16 sm:scroll-mt-20">
 					<div class="leaf-watermark"></div>
 					<div class="max-w-6xl mx-auto px-5 md:px-8 py-16 md:py-24 relative z-10">
@@ -591,21 +484,11 @@
 							<p class="text-muted max-w-lg mx-auto leading-relaxed">Kami melayani pengiriman tanaman ke seluruh kecamatan di Depok dengan cepat dan terpercaya.</p>
 						</div>
 
-						<!-- <div id="area-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8"> -->
-						<!-- <div id="area-grid" class="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 mb-8"> -->
-
-						<!-- <div id="area-grid" class="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 mb-8 items-stretch">
-							injected by JS
-						</div> -->
 						<div class="swiper area-swiper mb-8">
-							<div class="swiper-wrapper items-stretch" id="area-grid">
-								<!-- injected by JS -->
-							</div>
+							<div class="swiper-wrapper items-stretch" id="area-grid"></div>
 						</div>
 
-						<div id="area-pagination" class="flex items-center justify-center gap-2 mb-2">
-							<!-- injected by JS -->
-						</div>
+						<div id="area-pagination" class="flex items-center justify-center gap-2 mb-2"></div>
 						<p class="text-center text-muted text-xs mb-8" id="area-showing-label"></p>
 
 						<div class="text-center">
@@ -617,7 +500,6 @@
 					</div>
 				</section>
 
-				<!-- TESTIMONI -->
 				<section class="bg-sand/40 py-16 md:py-24">
 					<div class="max-w-7xl mx-auto px-5 md:px-8">
 						<div class="text-center mb-12" data-aos="fade-up">
@@ -626,18 +508,12 @@
 							<p class="text-muted max-w-xl mx-auto leading-relaxed">Kepercayaan pelanggan adalah motivasi terbesar kami untuk terus memberikan yang terbaik.</p>
 						</div>
 
-						<!-- <div id="testimoni-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5"> -->
-						<!-- injected by JS -->
-						<!-- </div> -->
 						<div class="swiper testimoni-swiper" style="height: auto">
-							<div class="swiper-wrapper items-stretch" id="testimoni-grid">
-								<!-- injected by JS -->
-							</div>
+							<div class="swiper-wrapper items-stretch" id="testimoni-grid"></div>
 						</div>
 					</div>
 				</section>
 
-				<!-- FAQ -->
 				<section class="bg-cream">
 					<div class="max-w-3xl mx-auto px-5 md:px-8 py-16 md:py-24">
 						<div class="text-center mb-10" data-aos="fade-up">
@@ -645,9 +521,7 @@
 							<h2 class="font-display text-3xl md:text-4xl text-forest-dark">Pertanyaan Umum</h2>
 						</div>
 
-						<div id="faq-list" class="space-y-3" data-aos="fade-up" data-aos-delay="100">
-							<!-- injected by JS -->
-						</div>
+						<div id="faq-list" class="space-y-3" data-aos="fade-up" data-aos-delay="100"></div>
 
 						<div class="text-center mt-6 pt-2" data-aos="fade-up">
 							<p class="text-muted text-sm mb-4">Masih ada pertanyaan lain?</p>
@@ -659,7 +533,6 @@
 					</div>
 				</section>
 
-				<!-- HERO KONTAK -->
 				<section id="kontak" class="relative overflow-hidden bg-sand/40 scroll-mt-16 sm:scroll-mt-20">
 					<div class="leaf-watermark"></div>
 					<div class="max-w-3xl mx-auto px-5 md:px-8 py-20 md:py-28 text-center relative z-10" data-aos="fade-up">
@@ -673,9 +546,6 @@
 				</section>
 			</main>
 
-			<!-- ============================================================ -->
-			<!-- PAGE: CHECKOUT / RINGKASAN PESANAN -->
-			<!-- ============================================================ -->
 			<main id="page-checkout" x-page class="flex-1">
 				<div class="max-w-4xl mx-auto px-4 sm:px-5 md:px-8 pt-5 sm:pt-6 md:pt-8 pb-8 sm:pb-10 md:pb-16">
 					<button onclick="goPage('home')" class="inline-flex items-center gap-2 text-sm font-medium text-muted hover:text-forest mb-8 transition-colors"><i data-lucide="arrow-left" class="w-4 h-4"></i> Kembali belanja</button>
@@ -705,7 +575,6 @@
 					</div>
 
 					<div id="checkout-form-wrap" data-aos="fade-up">
-						<!-- ============ STEP 2: DATA PESANAN ============ -->
 						<div id="checkout-data-wrap">
 							<p class="uppercase tracking-[0.2em] text-xs font-semibold text-terracotta mb-2">Langkah 2 dari 4</p>
 							<h1 class="font-display text-3xl md:text-4xl text-forest-dark mb-8">Data Pemesanan</h1>
@@ -733,13 +602,11 @@
 							</div>
 						</div>
 
-						<!-- ============ STEP 3: PENGIRIMAN + RINGKASAN ============ -->
 						<div id="checkout-shipping-wrap" class="hidden">
 							<p class="uppercase tracking-[0.2em] text-xs font-semibold text-terracotta mb-2">Langkah 3 dari 4</p>
 							<h1 class="font-display text-3xl md:text-4xl text-forest-dark mb-8">Pengiriman & Ringkasan</h1>
 
 							<div class="space-y-4">
-								<!-- PENERIMA (read-only recap) -->
 								<div class="bg-white border border-sand rounded-2xl p-6">
 									<p class="text-xs uppercase tracking-widest font-semibold text-terracotta mb-2">Penerima</p>
 									<p class="font-semibold text-base" id="sum-nama">-</p>
@@ -747,7 +614,6 @@
 									<p class="text-base text-muted mt-1" id="sum-alamat">-</p>
 								</div>
 
-								<!-- RINGKASAN PESANAN -->
 								<div class="bg-white border border-sand rounded-2xl p-6">
 									<p class="text-xs uppercase tracking-widest font-semibold text-terracotta mb-3">Ringkasan Pesanan</p>
 									<div id="sum-items" class="space-y-2.5 text-base mb-3"></div>
@@ -757,7 +623,6 @@
 									</div>
 								</div>
 
-								<!-- METODE PENGIRIMAN -->
 								<div>
 									<p class="text-xs uppercase tracking-widest font-semibold text-terracotta mb-3">Metode Pengiriman</p>
 									<div class="grid gap-3" id="shipping-options">
@@ -778,13 +643,11 @@
 									</div>
 								</div>
 
-								<!-- CATATAN -->
 								<div class="bg-white border border-sand rounded-2xl p-6">
 									<label class="block text-base font-semibold mb-2">Catatan Khusus (Opsional)</label>
 									<textarea id="f-catatan" rows="2" ... class="w-full px-4 py-3 rounded-xl border border-sand bg-cream/40 outline-none focus:outline-none focus-visible:outline-none resize-none text-base"></textarea>
 								</div>
 
-								<!-- TOTAL AKHIR -->
 								<div class="bg-white border border-sand rounded-2xl p-6">
 									<div class="flex items-end justify-between gap-3">
 										<div>
@@ -803,14 +666,12 @@
 						</div>
 					</div>
 
-					<!-- INVOICE VIEW (shown after form submitted) -->
 					<div id="invoice-wrap" class="hidden">
 						<div class="text-center mb-8" data-aos="fade-up">
 							<h1 class="font-display text-3xl md:text-4xl text-forest-dark mb-3">Ringkasan Pesanan</h1>
 							<p class="text-muted text-sm max-w-md mx-auto leading-relaxed">Screenshot kartu di bawah ini atau download PDF, lalu kirim ke WhatsApp kami untuk kami proses pesanan Anda.</p>
 						</div>
 
-						<!-- The screenshot-able invoice card -->
 						<div id="invoice-card" class="invoice-card relative rounded-3xl border border-sand shadow-lg mx-auto max-w-xl overflow-hidden" data-aos="zoom-in">
 							<div class="leaf-watermark"></div>
 							<div class="bg-forest text-cream px-5 sm:px-8 py-6 flex items-center justify-between relative z-10">
@@ -844,9 +705,7 @@
 
 								<div class="stitch my-6"></div>
 
-								<div id="inv-items" class="space-y-3 text-sm">
-									<!-- injected -->
-								</div>
+								<div id="inv-items" class="space-y-3 text-sm"></div>
 
 								<div class="stitch my-6"></div>
 
@@ -863,25 +722,19 @@
 						</div>
 
 						<div class="max-w-xl mx-auto mt-8 flex flex-col gap-3">
-							<!-- baris 1: Download PDF (full width) -->
 							<button id="btn-download-pdf" onclick="downloadInvoicePDF()" class="w-full h-12 sm:h-14 rounded-full border border-forest text-forest font-semibold text-sm flex items-center justify-center gap-2 hover:bg-sand transition-colors disabled:opacity-60 disabled:cursor-not-allowed"><i data-lucide="download" class="w-4 h-4"></i> Download PDF</button>
 
-							<!-- baris 2: Ubah data | Kirim ke WhatsApp (berdampingan) -->
 							<div class="flex flex-row gap-2">
 								<button onclick="backToForm()" class="flex-1 h-14 rounded-full border border-forest/30 font-semibold text-sm px-1 hover:bg-sand transition-colors whitespace-nowrap">Ubah data</button>
 								<button onclick="sendToWhatsApp()" class="flex-[1.7] h-14 rounded-full bg-forest text-white font-semibold text-sm px-1 flex items-center justify-center gap-1.5 hover:brightness-95 transition-all whitespace-nowrap"><i data-lucide="message-circle" class="w-4 h-4 shrink-0"></i> Kirim ke WhatsApp</button>
 							</div>
 
-							<!-- baris 3: Kembali Belanja (full width) -->
 							<button onclick="finishAndGoHome()" class="w-full h-12 sm:h-14 rounded-full text-sm font-semibold text-muted hover:text-forest transition-colors flex items-center justify-center gap-2"><i data-lucide="arrow-left" class="w-4 h-4"></i> Kembali Belanja</button>
 						</div>
 					</div>
 				</div>
 			</main>
 
-			<!-- ============================================================ -->
-			<!-- PAGE: KERANJANG -->
-			<!-- ============================================================ -->
 			<main id="page-cart" x-page class="flex-1">
 				<div class="max-w-4xl mx-auto px-4 sm:px-5 md:px-8 pt-5 sm:pt-6 md:pt-8 pb-8 sm:pb-10 md:pb-16">
 					<button onclick="goPage('home')" class="inline-flex items-center gap-2 text-sm font-medium text-muted hover:text-forest mb-6 sm:mb-8 transition-colors"><i data-lucide="arrow-left" class="w-4 h-4"></i> Kembali belanja</button>
@@ -913,17 +766,12 @@
 					<p class="uppercase tracking-[0.2em] text-xs font-semibold text-terracotta mb-2" data-aos="fade-up">Langkah 1 dari 4</p>
 					<h1 class="font-display text-3xl md:text-4xl text-forest-dark mb-6" data-aos="fade-up">Periksa pesanan</h1>
 
-					<div id="cart-items" class="space-y-4 mb-6">
-						<!-- injected -->
-					</div>
+					<div id="cart-items" class="space-y-4 mb-6"></div>
 
-					<!-- TAMBAH PRODUK LAIN (SWIPER) -->
 					<div class="mb-10">
 						<p class="text-sm font-semibold text-forest-dark mb-3">Mau tambah produk lain?</p>
 						<div class="swiper cart-add-swiper" style="height: auto">
-							<div class="swiper-wrapper items-stretch" id="cart-add-swiper-wrapper">
-								<!-- injected by JS -->
-							</div>
+							<div class="swiper-wrapper items-stretch" id="cart-add-swiper-wrapper"></div>
 						</div>
 					</div>
 
@@ -945,10 +793,8 @@
 			</main>
 		</div>
 
-		<!-- ============ FOOTER ============ -->
 		<footer class="bg-forest-dark text-cream">
 			<div class="max-w-7xl mx-auto px-5 md:px-8 py-14 grid md:grid-cols-4 gap-10">
-				<!-- KOLOM 1: BRAND -->
 				<div>
 					<div class="flex items-center gap-2 mb-3">
 						<div class="w-9 h-9 rounded-full bg-cream/10 flex items-center justify-center shrink-0">
@@ -970,31 +816,22 @@
 					</a>
 				</div>
 
-				<!-- KOLOM 2: LAYANAN KAMI -->
 				<div>
 					<p class="font-display text-lg mb-4">Layanan Kami</p>
-					<ul id="footer-layanan-list" class="space-y-2 text-sm text-cream/60">
-						<!-- injected by JS -->
-					</ul>
+					<ul id="footer-layanan-list" class="space-y-2 text-sm text-cream/60"></ul>
 				</div>
 
-				<!-- KOLOM 3: AREA PENGIRIMAN -->
 				<div>
 					<div class="flex items-center justify-between gap-2 mb-4">
 						<p class="font-display text-lg">Area Pengiriman</p>
 						<span class="bg-terracotta/20 text-terracotta text-[10px] font-semibold px-2 py-0.5 rounded-full shrink-0" id="footer-area-count">0 kota</span>
 					</div>
 
-					<div id="footer-area-list" class="flex flex-col gap-1.5 mb-4" style="min-height: 13.5rem">
-						<!-- injected by JS: kotak-kotak nama area -->
-					</div>
+					<div id="footer-area-list" class="flex flex-col gap-1.5 mb-4" style="min-height: 13.5rem"></div>
 
-					<div id="footer-area-nav" class="flex flex-wrap items-center gap-1.5">
-						<!-- injected by JS: dot kotak + panah digabung 1 flex-wrap agar selalu 1 baris -->
-					</div>
+					<div id="footer-area-nav" class="flex flex-wrap items-center gap-1.5"></div>
 				</div>
 
-				<!-- KOLOM 4: HUBUNGI KAMI -->
 				<div>
 					<p class="font-display text-lg mb-4">Hubungi Kami</p>
 					<ul class="space-y-3 text-sm text-cream/60">
@@ -1023,7 +860,6 @@
 			</div>
 		</footer>
 
-		<!-- ============ FLOATING CART BAR ============ -->
 		<div id="floating-cart-bar" class="hidden fixed left-1/2 -translate-x-1/2 bottom-5 z-40 w-[92%] max-w-md sm:w-auto">
 			<button onclick="goPage('cart')" class="group w-full flex items-center gap-3 bg-forest text-cream rounded-full pl-2 pr-2 py-2 shadow-2xl hover:bg-forest-dark hover:scale-[1.02] active:scale-95 transition-all duration-200">
 				<div class="relative w-11 h-11 bg-white/10 rounded-full flex items-center justify-center shrink-0">
@@ -1041,15 +877,6 @@
 			</button>
 		</div>
 
-		<!-- <a id="wa-float-btn" href="https://wa.me/6285196103568" target="_blank" class="fixed right-5 bottom-5 z-50 flex items-center gap-2 bg-forest text-white pl-3 pr-5 py-3 rounded-full shadow-2xl hover:brightness-95 transition-transform transition-colors duration-300" aria-label="Pesan sekarang lewat WhatsApp">
-			<span class="relative flex items-center justify-center w-9 h-9 shrink-0">
-				<span class="absolute inline-flex h-full w-full rounded-full bg-white/40 animate-ping"></span>
-				<span class="relative inline-flex items-center justify-center w-9 h-9 rounded-full bg-white/10">
-					<svg viewBox="0 0 448 512" class="w-6 h-6 fill-current"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" /></svg>
-				</span>
-			</span>
-			<span class="text-sm font-semibold whitespace-nowrap">Pesan Sekarang</span>
-		</a> -->
 		<div id="wa-float-wrap" class="fixed inset-x-0 bottom-5 z-50 pointer-events-none">
 			<div class="max-w-7xl mx-auto px-5 md:px-8 flex justify-end">
 				<a id="wa-float-btn" href="https://wa.me/6285196103568" target="_blank" class="pointer-events-auto flex items-center gap-2 bg-forest text-white pl-3 pr-5 py-3 rounded-full shadow-2xl hover:brightness-95 transition-colors duration-300" aria-label="Pesan sekarang lewat WhatsApp">
@@ -1064,31 +891,25 @@
 			</div>
 		</div>
 
-		<!-- ============ SCRIPTS ============ -->
 		<script src="assets/vendor/gsap/gsap.min.js"></script>
 		<script src="assets/vendor/aos/aos.js"></script>
 		<script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
 		<script src="assets/vendor/sweetalert2/sweetalert2.all.min.js"></script>
 
 		<script>
-			// Initialize Year's
 			document.getElementById("year").textContent = new Date().getFullYear();
 
-			/* ============================================================
-   DATA
-   ============================================================ */
 			const WHATSAPP_NUMBER = "6285196103568";
-
 			const CATEGORIES = ["Semua", "Tanaman", "Pot", "Perawatan"];
 
 			const PRODUCTS = [
-				{ id: 1, name: "Monstera Deliciosa", category: "Tanaman", price: 185000, img: "akar-p1", desc: "Tanaman hias populer dengan daun berlubang khas, cocok untuk sudut ruang tamu." },
+				{ id: 1, name: "Monstera Deliciosa", category: "Tanaman", price: 185000, originalPrice: 230000, img: "akar-p1", desc: "Tanaman hias populer dengan daun berlubang khas, cocok untuk sudut ruang tamu." },
 				{ id: 2, name: "Sansevieria Lidah Mertua", category: "Tanaman", price: 95000, img: "akar-p2", desc: "Tahan banting, cocok untuk pemula, membersihkan udara ruangan." },
-				{ id: 3, name: "Calathea Orbifolia", category: "Tanaman", price: 210000, img: "akar-p3", desc: "Motif daun bergaris perak yang elegan, suka tempat teduh." },
+				{ id: 3, name: "Calathea Orbifolia", category: "Tanaman", price: 210000, originalPrice: 260000, img: "akar-p3", desc: "Motif daun bergaris perak yang elegan, suka tempat teduh." },
 				{ id: 4, name: "Aglonema Merah", category: "Tanaman", price: 120000, img: "akar-p4", desc: "Daun merah-hijau mencolok, dipercaya membawa keberuntungan." },
-				{ id: 5, name: "Pot Tanah Liat Klasik", category: "Pot", price: 45000, img: "akar-p5", desc: "Pot tanah liat bakar tangan, sirkulasi udara akar lebih baik." },
+				{ id: 5, name: "Pot Tanah Liat Klasik", category: "Pot", price: 45000, originalPrice: 60000, img: "akar-p5", desc: "Pot tanah liat bakar tangan, sirkulasi udara akar lebih baik." },
 				{ id: 6, name: "Pot Semen Minimalis", category: "Pot", price: 68000, img: "akar-p6", desc: "Desain polos modern, cocok untuk gaya interior minimalis." },
-				{ id: 7, name: "Pupuk Organik Cair 500ml", category: "Perawatan", price: 35000, img: "akar-p7", desc: "Pupuk organik cair untuk pertumbuhan daun dan akar lebih subur." },
+				{ id: 7, name: "Pupuk Organik Cair 500ml", category: "Perawatan", price: 35000, originalPrice: 45000, img: "akar-p7", desc: "Pupuk organik cair untuk pertumbuhan daun dan akar lebih subur." },
 				{ id: 8, name: "Sprayer Kabut Halus", category: "Perawatan", price: 29000, img: "akar-p8", desc: "Semprotan kabut halus untuk menjaga kelembapan daun tropis." },
 			];
 
@@ -1126,7 +947,6 @@
 
 			const FOOTER_AREA_PER_PAGE = 5;
 			let footerAreaCurrentPage = 1;
-
 			let currentCategory = "Semua";
 			let cart = JSON.parse(localStorage.getItem("akar_cart") || "[]");
 			let selectedShipping = { label: "Ambil di kebun", cost: 0 };
@@ -1135,9 +955,6 @@
 			let lastSumSubtotal = 0;
 			let lastSumTotal = 0;
 
-			/* ============================================================
-   INIT
-   ============================================================ */
 			document.addEventListener("DOMContentLoaded", () => {
 				lucide.createIcons();
 				AOS.init({ duration: 700, once: true, easing: "ease-out-cubic" });
@@ -1172,7 +989,6 @@
 				const start = (footerAreaCurrentPage - 1) * FOOTER_AREA_PER_PAGE;
 				const pageItems = DELIVERY_AREAS.slice(start, start + FOOTER_AREA_PER_PAGE);
 
-				// kotak per nama area
 				listWrap.innerHTML = pageItems
 					.map(
 						(area) => `
@@ -1186,7 +1002,6 @@
 				if (countEl) countEl.textContent = `${DELIVERY_AREAS.length} kota`;
 
 				if (navWrap) {
-					// dot-dot kotak halaman
 					const dotsHTML = Array.from({ length: totalPages })
 						.map((_, i) => {
 							const page = i + 1;
@@ -1196,7 +1011,6 @@
 						})
 						.join("");
 
-					// panah + info halaman, ditempel ke ujung kanan lewat ml-auto, tetap 1 flex row bareng dots
 					const arrowsHTML = `
 						<span class="flex items-center gap-1 ml-auto">
 							<button id="footer-area-prev" onclick="footerAreaPage(-1)" class="w-7 h-7 rounded-full flex items-center justify-center text-cream/50 hover:bg-cream/10 transition-colors" aria-label="Sebelumnya"><i data-lucide="chevron-left" class="w-3.5 h-3.5"></i></button>
@@ -1214,7 +1028,6 @@
 				}
 			}
 
-			// Dipanggil dari tombol panah kiri/kanan
 			function footerAreaPage(delta) {
 				const totalPages = Math.ceil(DELIVERY_AREAS.length / FOOTER_AREA_PER_PAGE);
 				const next = footerAreaCurrentPage + delta;
@@ -1224,7 +1037,6 @@
 				footerGoToAreaPage(next);
 			}
 
-			// Dipanggil langsung dari klik salah satu kotak halaman
 			function footerGoToAreaPage(page) {
 				const totalPages = Math.ceil(DELIVERY_AREAS.length / FOOTER_AREA_PER_PAGE);
 				if (page < 1 || page > totalPages || page === footerAreaCurrentPage) return;
@@ -1251,89 +1063,17 @@
 				}
 			}
 
-			// Animasi "tekan" pada tombol panah biar tidak kaku
 			function footerBumpArrow(id) {
 				const el = document.getElementById(id);
 				if (!el || !window.gsap) return;
 				gsap.fromTo(el, { scale: 0.8 }, { scale: 1, duration: 0.3, ease: "back.out(4)" });
 			}
 
-			/* ============================================================
-   AREA PENGIRIMAN
-   ============================================================ */
-			// const AREA_PER_PAGE = 9;
-			// let areaCurrentPage = 1;
 			function getAreaPerPage() {
 				return window.innerWidth < 640 ? 2 : 9;
 			}
 			let areaCurrentPage = 1;
 
-			// function renderDeliveryAreas() {
-			// 	const wrap = document.getElementById("area-grid");
-			// 	if (!wrap) return;
-
-			// 	const totalPages = Math.ceil(DELIVERY_AREAS.length / AREA_PER_PAGE);
-			// 	const start = (areaCurrentPage - 1) * AREA_PER_PAGE;
-			// 	const pageItems = DELIVERY_AREAS.slice(start, start + AREA_PER_PAGE);
-			// 			function renderDeliveryAreas() {
-			// 				const wrap = document.getElementById("area-grid");
-			// 				if (!wrap) return;
-
-			// 				const AREA_PER_PAGE = getAreaPerPage();
-			// 				const totalPages = Math.ceil(DELIVERY_AREAS.length / AREA_PER_PAGE);
-			// 				const start = (areaCurrentPage - 1) * AREA_PER_PAGE;
-			// 				const pageItems = DELIVERY_AREAS.slice(start, start + AREA_PER_PAGE);
-
-			// 				const cardsHTML = pageItems
-			// 					.map(
-			// 						(area) => `
-			// <div class="bg-white border border-sand rounded-2xl p-4 h-full flex flex-col">
-			//   <div class="flex items-center gap-3 mb-2">
-			//     <div class="w-8 h-8 rounded-full bg-terracotta/20 flex items-center justify-center shrink-0">
-			//       <i data-lucide="map-pin" class="w-4 h-4 text-terracotta"></i>
-			//     </div>
-			//     <p class="font-semibold text-sm text-ink line-clamp-1">${area.name}</p>
-			//   </div>
-			//   <p class="text-muted text-xs mb-1 line-clamp-2 min-h-[2rem]">${area.desc}</p>
-			//   <span class="text-terracotta text-xs font-semibold mt-auto pt-1">${area.eta}</span>
-			// </div>`,
-			// 					)
-			// 					.join("");
-
-			// 				// kartu placeholder dengan struktur & padding SAMA PERSIS seperti kartu asli
-			// 				// (cuma disembunyikan visualnya), supaya tinggi barisnya identik dan
-			// 				// panah pagination di bawah grid tidak ikut naik saat item di halaman terakhir sedikit
-			// 				const emptyCount = AREA_PER_PAGE - pageItems.length;
-			// 				const placeholderHTML = Array.from({ length: emptyCount })
-			// 					.map(
-			// 						() => `
-			// <div class="invisible pointer-events-none bg-white border border-sand rounded-2xl p-4 h-full flex flex-col" aria-hidden="true">
-			//   <div class="flex items-center gap-3 mb-2">
-			//     <div class="w-8 h-8 rounded-full bg-terracotta/20 flex items-center justify-center shrink-0">
-			//       <i data-lucide="map-pin" class="w-4 h-4 text-terracotta"></i>
-			//     </div>
-			//     <p class="font-semibold text-sm text-ink line-clamp-1">-</p>
-			//   </div>
-			//   <p class="text-muted text-xs mb-1 line-clamp-2 min-h-[2rem]">-</p>
-			//   <span class="text-terracotta text-xs font-semibold mt-auto pt-1">-</span>
-			// </div>`,
-			// 					)
-			// 					.join("");
-
-			// 				wrap.innerHTML = cardsHTML + placeholderHTML;
-
-			// 				lucide.createIcons();
-			// 				renderAreaPagination(totalPages);
-
-			// 				const showingEnd = Math.min(start + AREA_PER_PAGE, DELIVERY_AREAS.length);
-			// 				document.getElementById("area-showing-label").textContent = `Menampilkan ${start + 1}-${showingEnd} dari ${DELIVERY_AREAS.length} area`;
-
-			// 				const waLink = document.getElementById("area-wa-link");
-			// 				if (waLink) {
-			// 					const text = encodeURIComponent("Halo, apakah ada layanan pengiriman ke area saya?");
-			// 					waLink.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${text}`;
-			// 				}
-			// 			}
 			function renderDeliveryAreas() {
 				const wrap = document.getElementById("area-grid");
 				if (!wrap) return;
@@ -1341,7 +1081,6 @@
 				const AREA_PER_PAGE = getAreaPerPage();
 				const totalPages = Math.ceil(DELIVERY_AREAS.length / AREA_PER_PAGE);
 
-				// bangun SEMUA halaman sekaligus sebagai swiper-slide, supaya bisa digeser bebas
 				let slidesHTML = "";
 				for (let page = 0; page < totalPages; page++) {
 					const start = page * AREA_PER_PAGE;
@@ -1388,7 +1127,6 @@
 				wrap.innerHTML = slidesHTML;
 				lucide.createIcons();
 
-				// init / re-init swiper
 				if (window.areaSwiperInstance) {
 					window.areaSwiperInstance.destroy(true, true);
 					window.areaSwiperInstance = null;
@@ -1433,26 +1171,20 @@
 			}
 
 			function getAreaPaginationRange(current, total) {
-				// total halaman sedikit -> tampilkan semua, tidak perlu ellipsis
 				if (total <= 5) {
 					return Array.from({ length: total }, (_, i) => i + 1);
 				}
 
 				const range = new Set([1, total, current]);
 
-				// sertakan tetangga kiri-kanan dari current
 				if (current - 1 > 1) range.add(current - 1);
 				if (current + 1 < total) range.add(current + 1);
-
-				// kalau current di ujung (1 atau 2), tambahkan halaman ke-3 biar "1 2 3 ... total"
 				if (current <= 2) range.add(3);
-				// kalau current dekat akhir, tambahkan halaman total-2 biar "... n-2 n-1 n"
 				if (current >= total - 1) range.add(total - 2);
 
 				const sorted = [...range].filter((p) => p >= 1 && p <= total).sort((a, b) => a - b);
-
-				// sisipkan "..." di antara angka yang tidak berurutan
 				const result = [];
+
 				for (let i = 0; i < sorted.length; i++) {
 					if (i > 0 && sorted[i] - sorted[i - 1] > 1) {
 						result.push("...");
@@ -1487,31 +1219,6 @@
 				lucide.createIcons();
 			}
 
-			// function goAreaPage(page) {
-			// 	const totalPages = Math.ceil(DELIVERY_AREAS.length / AREA_PER_PAGE);
-			// 	if (page < 1 || page > totalPages || page === areaCurrentPage) return;
-			// function goAreaPage(page) {
-			// 	const totalPages = Math.ceil(DELIVERY_AREAS.length / getAreaPerPage());
-			// 	if (page < 1 || page > totalPages || page === areaCurrentPage) return;
-
-			// 	document.getElementById("area-kirim").scrollIntoView({ behavior: "smooth", block: "start" });
-
-			// 	const direction = page > areaCurrentPage ? 1 : -1;
-			// 	const grid = document.getElementById("area-grid");
-
-			// 	gsap.killTweensOf(grid);
-			// 	gsap.to(grid, {
-			// 		opacity: 0,
-			// 		x: -40 * direction,
-			// 		duration: 0.3,
-			// 		ease: "power2.in",
-			// 		onComplete: () => {
-			// 			areaCurrentPage = page;
-			// 			renderDeliveryAreas();
-			// 			gsap.fromTo(grid, { opacity: 0, x: 40 * direction }, { opacity: 1, x: 0, duration: 0.45, ease: "power3.out" });
-			// 		},
-			// 	});
-			// }
 			function goAreaPage(page) {
 				const totalPages = Math.ceil(DELIVERY_AREAS.length / getAreaPerPage());
 				if (page < 1 || page > totalPages || page === areaCurrentPage) return;
@@ -1520,69 +1227,6 @@
 				}
 			}
 
-			/* ============================================================
-   TESTIMONI
-   ============================================================ */
-			// 		function renderTestimonials() {
-			// 			const wrap = document.getElementById("testimoni-grid");
-			// 			if (!wrap) return;
-
-			// 			wrap.innerHTML = TESTIMONIALS.map(
-			// 				(t, i) => `
-			// <div class="swiper-slide !h-auto" data-aos="fade-up" data-aos-delay="${(i % 3) * 80}">
-			//   <!--<div class="bg-white border border-sand rounded-2xl p-6 h-full flex flex-col">-->
-			//   <div class="bg-sand/40 border border-sand/60 rounded-2xl p-6 h-full flex flex-col backdrop-blur-[1px]">
-			//     <div class="flex items-start justify-between mb-3">
-			//       <div class="flex gap-0.5">
-			//         ${Array.from({ length: 5 })
-			// 			.map((_, s) => `<i data-lucide="star" class="w-4 h-4 ${s < t.rating ? "text-terracotta fill-terracotta" : "text-sand"}"></i>`)
-			// 			.join("")}
-			//       </div>
-			//       <i data-lucide="quote" class="w-6 h-6 text-sand shrink-0"></i>
-			//     </div>
-			//     <p class="text-sm text-ink/80 leading-relaxed mb-5 flex-1">"${t.text}"</p>
-			//     <div class="flex items-center gap-3">
-			//       <div class="w-10 h-10 rounded-full bg-forest/10 text-forest font-display text-base flex items-center justify-center shrink-0">${t.name.charAt(0)}</div>
-			//       <div>
-			//         <p class="font-semibold text-sm">${t.name}</p>
-			//         <p class="text-muted text-xs">${t.location}</p>
-			//       </div>
-			//     </div>
-			//   </div>
-			// </div>`,
-			// 			).join("");
-
-			// 			lucide.createIcons();
-
-			// 			if (window.testimoniSwiperInstance) {
-			// 				window.testimoniSwiperInstance.destroy(true, true);
-			// 				window.testimoniSwiperInstance = null;
-			// 			}
-			// 			window.testimoniSwiperInstance = new Swiper(".testimoni-swiper", {
-			// 				slidesPerView: 2,
-			// 				spaceBetween: 12,
-			// 				grabCursor: true,
-			// 				observer: true,
-			// 				observeParents: true,
-			// 				loop: true,
-			// 				loopAdditionalSlides: TESTIMONIALS.length,
-			// 				freeMode: {
-			// 					enabled: true,
-			// 					momentum: false,
-			// 				},
-			// 				speed: 400,
-			// 				mousewheel: {
-			// 					forceToAxis: true,
-			// 					sensitivity: 1,
-			// 					releaseOnEdges: true,
-			// 				},
-			// 				breakpoints: {
-			// 					640: { spaceBetween: 20 },
-			// 				},
-			// 			});
-
-			// 			startTestimoniMarquee(window.testimoniSwiperInstance);
-			// 		}
 			function renderTestimonials() {
 				const wrap = document.getElementById("testimoni-grid");
 				if (!wrap) return;
@@ -1622,26 +1266,6 @@
 					window.testimoniSwiperInstance.destroy(true, true);
 					window.testimoniSwiperInstance = null;
 				}
-				// window.testimoniSwiperInstance = new Swiper(".testimoni-swiper", {
-				// 	slidesPerView: 2,
-				// 	spaceBetween: 12,
-				// 	grabCursor: true,
-				// 	observer: true,
-				// 	observeParents: true,
-				// 	freeMode: {
-				// 		enabled: true,
-				// 		momentum: false,
-				// 	},
-				// 	speed: 400,
-				// 	mousewheel: {
-				// 		forceToAxis: true,
-				// 		sensitivity: 1,
-				// 		releaseOnEdges: true,
-				// 	},
-				// 	breakpoints: {
-				// 		640: { spaceBetween: 20 },
-				// 	},
-				// });
 				window.testimoniSwiperInstance = new Swiper(".testimoni-swiper", {
 					slidesPerView: 2,
 					spaceBetween: 12,
@@ -1654,84 +1278,11 @@
 					},
 				});
 
-				// beri jeda 1 frame supaya swiper.slidesGrid sudah terhitung sebelum marquee jalan
 				requestAnimationFrame(() => {
 					startTestimoniMarquee(window.testimoniSwiperInstance);
 				});
 			}
 
-			// function startTestimoniMarquee(swiper) {
-			// 	if (!swiper) return;
-
-			// 	if (window.testimoniMarqueeRAF) {
-			// 		cancelAnimationFrame(window.testimoniMarqueeRAF);
-			// 		window.testimoniMarqueeRAF = null;
-			// 	}
-
-			// 	const SPEED_PX_PER_MS = 0.035;
-			// 	let isPaused = false;
-			// 	let resumeTimeout = null;
-			// 	let lastTime = null;
-
-			// 	// lebar 1 set data asli (sebelum duplikasi) = posisi slide ke-(jumlah asli) di slidesGrid
-			// 	// dipakai untuk tahu kapan harus "loncat" balik supaya terlihat menyambung mulus
-			// 	function getSetWidth() {
-			// 		const originalCount = TESTIMONIALS.length;
-			// 		if (swiper.slidesGrid && swiper.slidesGrid[originalCount] !== undefined) {
-			// 			return swiper.slidesGrid[originalCount];
-			// 		}
-			// 		// fallback kalau slidesGrid belum siap
-			// 		return swiper.virtualSize / 2;
-			// 	}
-
-			// 	function tick(time) {
-			// 		if (lastTime === null) lastTime = time;
-			// 		const delta = time - lastTime;
-			// 		lastTime = time;
-
-			// 		if (!isPaused && swiper && !swiper.destroyed) {
-			// 			const setWidth = getSetWidth();
-			// 			let newTranslate = swiper.translate - delta * SPEED_PX_PER_MS;
-
-			// 			// begitu sudah melewati 1 set penuh (setWidth), loncat balik sejauh setWidth
-			// 			// karena set kedua identik dengan set pertama, loncatan ini tidak terlihat
-			// 			if (Math.abs(newTranslate) >= setWidth) {
-			// 				newTranslate += setWidth;
-			// 			}
-
-			// 			swiper.setTranslate(newTranslate);
-			// 			swiper.updateProgress(newTranslate);
-			// 			swiper.updateActiveIndex();
-			// 			swiper.updateSlidesClasses();
-			// 		}
-
-			// 		window.testimoniMarqueeRAF = requestAnimationFrame(tick);
-			// 	}
-
-			// 	function pause() {
-			// 		isPaused = true;
-			// 		if (resumeTimeout) clearTimeout(resumeTimeout);
-			// 	}
-
-			// 	function scheduleResume() {
-			// 		if (resumeTimeout) clearTimeout(resumeTimeout);
-			// 		resumeTimeout = setTimeout(() => {
-			// 			isPaused = false;
-			// 			lastTime = null;
-			// 		}, 1200);
-			// 	}
-
-			// 	swiper.on("touchStart", pause);
-			// 	swiper.on("sliderFirstMove", pause);
-			// 	swiper.on("touchEnd", scheduleResume);
-
-			// 	if (swiper.el) {
-			// 		swiper.el.addEventListener("mouseenter", pause);
-			// 		swiper.el.addEventListener("mouseleave", scheduleResume);
-			// 	}
-
-			// 	window.testimoniMarqueeRAF = requestAnimationFrame(tick);
-			// }
 			function startTestimoniMarquee(swiper) {
 				if (!swiper) return;
 
@@ -1776,9 +1327,6 @@
 				window.testimoniMarqueeRAF = requestAnimationFrame(tick);
 			}
 
-			/* ============================================================
-   FAQ
-   ============================================================ */
 			function renderFAQ() {
 				const wrap = document.getElementById("faq-list");
 				if (!wrap) return;
@@ -1847,18 +1395,17 @@
 				return "Rp " + n.toLocaleString("id-ID");
 			}
 
-			/* ============================================================
-   HERO SWIPER + GSAP INTRO
-   ============================================================ */
+			function discountPercent(p) {
+				if (!p.originalPrice || p.originalPrice <= p.price) return 0;
+				return Math.round(((p.originalPrice - p.price) / p.originalPrice) * 100);
+			}
+
 			function heroIntro() {
 				gsap.from("#page-home h1", { y: 24, opacity: 0, duration: 0.9, ease: "power3.out" });
 				gsap.from("#page-home p.text-muted", { y: 16, opacity: 0, duration: 0.9, delay: 0.15, ease: "power3.out" });
 				gsap.from("#page-home .hero-grid-img", { scale: 0.96, opacity: 0, duration: 1, delay: 0.2, stagger: 0.08, ease: "power3.out" });
 			}
 
-			/* ============================================================
-   CATEGORY STRIP
-   ============================================================ */
 			function renderCategories() {
 				const wrap = document.getElementById("category-strip");
 				wrap.innerHTML = CATEGORIES.map(
@@ -1881,14 +1428,10 @@
 				renderProducts();
 			}
 
-			/* ============================================================
-   PRODUCT GRID
-   ============================================================ */
 			function renderCartAddSwiper() {
 				const wrap = document.getElementById("cart-add-swiper-wrapper");
 				if (!wrap) return;
 
-				// hanya tampilkan produk yang BELUM ada di keranjang
 				const availableProducts = PRODUCTS.filter((p) => !cart.some((x) => x.id === p.id));
 
 				if (availableProducts.length === 0) {
@@ -1907,19 +1450,24 @@
 				}
 
 				wrap.innerHTML = availableProducts
-					.map(
-						(p) => `
+					.map((p) => {
+						const disc = discountPercent(p);
+						return `
     <div class="swiper-slide !w-40 h-full">
       <div class="bg-white border border-sand rounded-2xl p-3 h-full flex flex-col">
         <div class="relative rounded-xl overflow-hidden aspect-square mb-2 bg-sand">
           <img src="https://picsum.photos/seed/${p.img}/300/300" class="w-full h-full object-cover" alt="${p.name}">
-        </div>
+          </div>
         <p class="text-xs font-semibold leading-snug line-clamp-2 mb-1 min-h-[2.25rem]">${p.name}</p>
-        <p class="text-forest font-display text-sm mb-2">${rupiah(p.price)}</p>
+        <div class="flex items-center gap-1.5 flex-wrap mb-2">
+          <p class="text-forest font-display text-sm">${rupiah(p.price)}</p>
+          ${disc > 0 ? `<p class="text-muted text-[10px] line-through">${rupiah(p.originalPrice)}</p>
+          <span class="bg-terracotta/10 text-terracotta text-[9px] font-bold px-1.5 py-0.5 rounded-full">-${disc}%</span>` : ""}
+        </div>
         <button onclick="cardAdd(${p.id})" class="mt-auto w-full h-9 rounded-full bg-forest text-cream text-xs font-semibold flex items-center justify-center gap-1"><i data-lucide="plus" class="w-3.5 h-3.5"></i> Tambah</button>
       </div>
-    </div>`,
-					)
+    </div>`;
+					})
 					.join("");
 
 				lucide.createIcons();
@@ -1949,8 +1497,9 @@
 				document.getElementById("product-count-label").textContent = `${list.length} produk`;
 
 				grid.innerHTML = list
-					.map(
-						(p) => `
+					.map((p) => {
+						const disc = discountPercent(p);
+						return `
     <div class="product-card group" data-aos="fade-up">
       <div class="relative overflow-hidden rounded-2xl mb-3 aspect-[4/5] bg-sand">
         <img src="https://picsum.photos/seed/${p.img}/500/620" alt="${p.name}" class="w-full h-full object-cover" loading="lazy">
@@ -1958,10 +1507,14 @@
         <div id="pctrl-${p.id}">${cardControlHTML(p)}</div>
       </div>
       <h3 class="font-semibold text-sm md:text-base leading-snug mb-1">${p.name}</h3>
-      <p class="text-forest font-display text-lg">${rupiah(p.price)}</p>
+      <div class="flex items-center gap-2 flex-wrap">
+        <p class="text-forest font-display text-lg">${rupiah(p.price)}</p>
+        ${disc > 0 ? `<p class="text-muted text-xs line-through">${rupiah(p.originalPrice)}</p>
+        <span class="bg-terracotta/10 text-terracotta text-[10px] font-bold px-1.5 py-0.5 rounded-full">-${disc}%</span>` : ""}
+      </div>
     </div>
-  `,
-					)
+  `;
+					})
 					.join("");
 
 				lucide.createIcons();
@@ -1999,8 +1552,6 @@
 				}
 			}
 
-			// Menentukan tampilan tombol di kartu produk: "+" saja jika belum ada di keranjang,
-			// atau stepper (- angka +) jika sudah ada.
 			function cardControlHTML(p) {
 				const item = cart.find((x) => x.id === p.id);
 				const qty = item ? item.qty : 0;
@@ -2072,7 +1623,6 @@
 				syncCartUI(prevCount);
 			}
 
-			// Refresh tampilan kontrol satu kartu produk saja (tanpa render ulang grid)
 			function refreshCardControl(id) {
 				const p = PRODUCTS.find((x) => x.id === id);
 				const el = document.getElementById(`pctrl-${id}`);
@@ -2083,7 +1633,6 @@
 				if (qtyEl) pulseQty(qtyEl, "#F7F3EC");
 			}
 
-			// Sinkronkan badge navbar, floating bar, dan halaman keranjang (jika sedang dibuka)
 			function syncCartUI(prevCount) {
 				const newCount = cart.reduce((s, i) => s + i.qty, 0);
 				const badgeEl = document.getElementById("cart-count");
@@ -2099,14 +1648,8 @@
 				}
 			}
 
-			/* ============================================================
-   CART
-   ============================================================ */
 			function saveCart() {
 				localStorage.setItem("akar_cart", JSON.stringify(cart));
-				// catatan: badge tidak di-update instan di sini — quickAdd() & changeQty()
-				// menganimasikan badge sendiri lewat animateCounter(), renderCart() yang
-				// update instan (dipakai saat load awal / hapus item / pindah halaman).
 			}
 
 			function updateCartCount() {
@@ -2177,10 +1720,6 @@
 				return cart.reduce((s, i) => s + i.price * i.qty, 0);
 			}
 
-			/* ============================================================
-   COUNTER ANIMATION
-   ============================================================ */
-			// Animasi angka menghitung naik/turun dari nilai lama ke nilai baru
 			function animateCounter(el, from, to, formatter = (n) => Math.round(n).toLocaleString("id-ID")) {
 				if (!el) return;
 				const obj = { val: from };
@@ -2194,7 +1733,6 @@
 				});
 			}
 
-			// Pulse kecil tiap kali angka qty berubah, biar ada micro-interaction
 			function pulseQty(el, endColor = "#23241F") {
 				if (!el) return;
 				gsap.fromTo(el, { scale: 1.4, color: "#C9713D" }, { scale: 1, color: endColor, duration: 0.35, ease: "back.out(3)" });
@@ -2218,7 +1756,6 @@
 
 				saveCart();
 
-				// update angka spesifik dengan animasi, tanpa render ulang seluruh list
 				const qtyEl = document.getElementById(`qty-${id}`);
 				const lineEl = document.getElementById(`line-${id}`);
 				const subtotalEl = document.getElementById("cart-subtotal");
@@ -2273,15 +1810,12 @@
 				}
 			}
 
-			/* ============================================================
-   PAGE NAVIGATION
-   ============================================================ */
 			function goPage(name) {
 				localStorage.setItem("akar_page", name);
 				const current = document.querySelector("[x-page].active");
 				const next = document.getElementById("page-" + name);
 
-				if (current === next) return; // sudah di halaman itu, tidak perlu animasi
+				if (current === next) return;
 
 				switch (name) {
 					case "cart":
@@ -2297,7 +1831,6 @@
 						break;
 				}
 
-				// kalau tidak ada halaman aktif sebelumnya (kasus jarang), langsung tampilkan
 				if (!current) {
 					next.classList.add("active");
 					window.scrollTo({ top: 0, behavior: "smooth" });
@@ -2308,7 +1841,6 @@
 					return;
 				}
 
-				// animasi keluar halaman lama
 				gsap.to(current, {
 					opacity: 0,
 					y: -12,
@@ -2316,9 +1848,8 @@
 					ease: "power2.in",
 					onComplete: () => {
 						current.classList.remove("active");
-						gsap.set(current, { clearProps: "opacity,y" }); // reset biar tidak nyangkut
+						gsap.set(current, { clearProps: "opacity,y" });
 
-						// tampilkan halaman baru
 						next.classList.add("active");
 						gsap.fromTo(next, { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.35, ease: "power3.out" });
 
@@ -2356,7 +1887,6 @@
 				lucide.createIcons();
 			}
 
-			// Tampil/sembunyikan & isi konten floating cart bar
 			function updateFloatingBar() {
 				const bar = document.getElementById("floating-cart-bar");
 				if (!bar) return;
@@ -2364,8 +1894,6 @@
 				const activePage = document.querySelector("[x-page].active")?.id;
 				const shouldShow = !(count === 0 || activePage === "page-cart" || activePage === "page-checkout");
 				const isCurrentlyVisible = !bar.classList.contains("hidden");
-
-				// update isi teks tetap jalan tiap kali (biar total & count selalu akurat)
 				const floatCountEl = document.getElementById("floating-cart-count");
 				const floatTotalEl = document.getElementById("floating-cart-total");
 				const newTotal = cartSubtotal();
@@ -2394,13 +1922,6 @@
 					gsap.fromTo(bar, { scale: 1.03 }, { scale: 1, duration: 0.25, ease: "power2.out" });
 				}
 
-				// Sesuaikan posisi tombol WA: naik ke atas floating bar cuma di layar mobile (di mana floating bar full-width di bawah)
-				// const waBtn = document.getElementById("wa-float-btn");
-				// if (waBtn) {
-				// 	const isMobile = window.innerWidth < 640;
-				// 	const shouldLift = shouldShow && isMobile;
-				// 	waBtn.style.bottom = shouldLift ? "6rem" : "1.25rem";
-				// }
 				const waWrap = document.getElementById("wa-float-wrap");
 				if (waWrap) {
 					const isMobile = window.innerWidth < 640;
@@ -2461,9 +1982,6 @@
 				renderCheckoutSummary();
 			}
 
-			/* ============================================================
-   SHIPPING OPTIONS
-   ============================================================ */
 			function initShippingOptions() {
 				const opts = document.querySelectorAll(".ship-opt");
 				opts.forEach((btn) => {
@@ -2477,9 +1995,6 @@
 				opts[0].click();
 			}
 
-			/* ============================================================
-   INVOICE / RINGKASAN PESANAN
-   ============================================================ */
 			let lastInvoiceNumber = "";
 
 			function generateInvoice() {
@@ -2537,8 +2052,6 @@
 			async function downloadInvoicePDF() {
 				const card = document.getElementById("invoice-card");
 				const btn = document.getElementById("btn-download-pdf");
-
-				// simpan isi asli tombol supaya bisa dikembalikan lagi setelah selesai
 				const originalBtnHTML = btn.innerHTML;
 				btn.disabled = true;
 				btn.innerHTML = `
@@ -2585,10 +2098,9 @@
 					console.error(err);
 					Swal.fire({ icon: "error", title: "Gagal membuat PDF", text: "Coba lagi ya.", confirmButtonColor: "#2C4A3B" });
 				} finally {
-					// kembalikan tombol ke kondisi semula, baik berhasil maupun gagal
 					btn.disabled = false;
 					btn.innerHTML = originalBtnHTML;
-					lucide.createIcons(); // re-render ikon download yang dikembalikan
+					lucide.createIcons();
 				}
 			}
 
@@ -2637,9 +2149,6 @@
 				});
 			}
 
-			/* ============================================================
-   HIDE/SHOW NAVBAR ON SCROLL
-   ============================================================ */
 			(function () {
 				const header = document.getElementById("site-header");
 				if (!header) return;
@@ -2684,7 +2193,6 @@
 				}
 			});
 
-			/* hide scrollbar for category strip */
 			const style = document.createElement("style");
 			style.textContent = `.no-scrollbar::-webkit-scrollbar{display:none} .no-scrollbar{-ms-overflow-style:none; scrollbar-width:none;}`;
 			document.head.appendChild(style);
