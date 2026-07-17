@@ -1457,12 +1457,13 @@
       <div class="bg-white border border-sand rounded-2xl p-3 h-full flex flex-col">
         <div class="relative rounded-xl overflow-hidden aspect-square mb-2 bg-sand">
           <img src="https://picsum.photos/seed/${p.img}/300/300" class="w-full h-full object-cover" alt="${p.name}">
-          </div>
-        <p class="text-xs font-semibold leading-snug line-clamp-2 mb-1 min-h-[2.25rem]">${p.name}</p>
-        <div class="flex items-center gap-1.5 flex-wrap mb-2">
+          <span class="absolute top-1.5 left-1.5 bg-cream/95 text-[8px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full text-forest">${p.category}</span>
+        </div>
+        <p class="text-xs font-semibold leading-snug line-clamp-2 mb-1 h-[2.25rem]">${p.name}</p>
+        <div class="flex flex-col gap-0.5 mb-2 h-[2.1rem] justify-center">
           <p class="text-forest font-display text-sm">${rupiah(p.price)}</p>
-          ${disc > 0 ? `<p class="text-muted text-[10px] line-through">${rupiah(p.originalPrice)}</p>
-          <span class="bg-terracotta/10 text-terracotta text-[9px] font-bold px-1.5 py-0.5 rounded-full">-${disc}%</span>` : ""}
+          ${disc > 0 ? `<div class="flex items-center gap-1.5"><p class="text-muted text-[10px] line-through">${rupiah(p.originalPrice)}</p>
+          <span class="bg-terracotta/10 text-terracotta text-[9px] font-bold px-1.5 py-0.5 rounded-full">-${disc}%</span></div>` : ""}
         </div>
         <button onclick="cardAdd(${p.id})" class="mt-auto w-full h-9 rounded-full bg-forest text-cream text-xs font-semibold flex items-center justify-center gap-1"><i data-lucide="plus" class="w-3.5 h-3.5"></i> Tambah</button>
       </div>
@@ -1506,11 +1507,11 @@
         <span class="absolute top-3 left-3 bg-cream/95 text-[10px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full text-forest">${p.category}</span>
         <div id="pctrl-${p.id}">${cardControlHTML(p)}</div>
       </div>
-      <h3 class="font-semibold text-sm md:text-base leading-snug mb-1">${p.name}</h3>
-      <div class="flex items-center gap-2 flex-wrap">
+      <h3 class="font-semibold text-sm md:text-base leading-snug mb-1 line-clamp-2 min-h-[2.5rem]">${p.name}</h3>
+      <div class="flex flex-col gap-1">
         <p class="text-forest font-display text-lg">${rupiah(p.price)}</p>
-        ${disc > 0 ? `<p class="text-muted text-xs line-through">${rupiah(p.originalPrice)}</p>
-        <span class="bg-terracotta/10 text-terracotta text-[10px] font-bold px-1.5 py-0.5 rounded-full">-${disc}%</span>` : ""}
+        ${disc > 0 ? `<div class="flex items-center gap-2"><p class="text-muted text-xs line-through">${rupiah(p.originalPrice)}</p>
+        <span class="bg-terracotta/10 text-terracotta text-[10px] font-bold px-1.5 py-0.5 rounded-full">-${disc}%</span></div>` : `<div class="h-[1.35rem]"></div>`}
       </div>
     </div>
   `;
@@ -1924,6 +1925,9 @@
 
 				const waWrap = document.getElementById("wa-float-wrap");
 				if (waWrap) {
+					const isOrderFlow = activePage === "page-cart" || activePage === "page-checkout";
+					waWrap.classList.toggle("hidden", isOrderFlow);
+
 					const isMobile = window.innerWidth < 640;
 					const shouldLift = shouldShow && isMobile;
 					waWrap.style.bottom = shouldLift ? "6rem" : "1.25rem";
