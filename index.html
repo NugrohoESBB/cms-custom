@@ -593,8 +593,14 @@
 
 						<!-- <div id="area-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8"> -->
 						<!-- <div id="area-grid" class="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 mb-8"> -->
-						<div id="area-grid" class="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 mb-8 items-stretch">
-							<!-- injected by JS -->
+
+						<!-- <div id="area-grid" class="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 mb-8 items-stretch">
+							injected by JS
+						</div> -->
+						<div class="swiper area-swiper mb-8">
+							<div class="swiper-wrapper items-stretch" id="area-grid">
+								<!-- injected by JS -->
+							</div>
 						</div>
 
 						<div id="area-pagination" class="flex items-center justify-center gap-2 mb-2">
@@ -1269,18 +1275,81 @@
 			// 	const totalPages = Math.ceil(DELIVERY_AREAS.length / AREA_PER_PAGE);
 			// 	const start = (areaCurrentPage - 1) * AREA_PER_PAGE;
 			// 	const pageItems = DELIVERY_AREAS.slice(start, start + AREA_PER_PAGE);
+			// 			function renderDeliveryAreas() {
+			// 				const wrap = document.getElementById("area-grid");
+			// 				if (!wrap) return;
+
+			// 				const AREA_PER_PAGE = getAreaPerPage();
+			// 				const totalPages = Math.ceil(DELIVERY_AREAS.length / AREA_PER_PAGE);
+			// 				const start = (areaCurrentPage - 1) * AREA_PER_PAGE;
+			// 				const pageItems = DELIVERY_AREAS.slice(start, start + AREA_PER_PAGE);
+
+			// 				const cardsHTML = pageItems
+			// 					.map(
+			// 						(area) => `
+			// <div class="bg-white border border-sand rounded-2xl p-4 h-full flex flex-col">
+			//   <div class="flex items-center gap-3 mb-2">
+			//     <div class="w-8 h-8 rounded-full bg-terracotta/20 flex items-center justify-center shrink-0">
+			//       <i data-lucide="map-pin" class="w-4 h-4 text-terracotta"></i>
+			//     </div>
+			//     <p class="font-semibold text-sm text-ink line-clamp-1">${area.name}</p>
+			//   </div>
+			//   <p class="text-muted text-xs mb-1 line-clamp-2 min-h-[2rem]">${area.desc}</p>
+			//   <span class="text-terracotta text-xs font-semibold mt-auto pt-1">${area.eta}</span>
+			// </div>`,
+			// 					)
+			// 					.join("");
+
+			// 				// kartu placeholder dengan struktur & padding SAMA PERSIS seperti kartu asli
+			// 				// (cuma disembunyikan visualnya), supaya tinggi barisnya identik dan
+			// 				// panah pagination di bawah grid tidak ikut naik saat item di halaman terakhir sedikit
+			// 				const emptyCount = AREA_PER_PAGE - pageItems.length;
+			// 				const placeholderHTML = Array.from({ length: emptyCount })
+			// 					.map(
+			// 						() => `
+			// <div class="invisible pointer-events-none bg-white border border-sand rounded-2xl p-4 h-full flex flex-col" aria-hidden="true">
+			//   <div class="flex items-center gap-3 mb-2">
+			//     <div class="w-8 h-8 rounded-full bg-terracotta/20 flex items-center justify-center shrink-0">
+			//       <i data-lucide="map-pin" class="w-4 h-4 text-terracotta"></i>
+			//     </div>
+			//     <p class="font-semibold text-sm text-ink line-clamp-1">-</p>
+			//   </div>
+			//   <p class="text-muted text-xs mb-1 line-clamp-2 min-h-[2rem]">-</p>
+			//   <span class="text-terracotta text-xs font-semibold mt-auto pt-1">-</span>
+			// </div>`,
+			// 					)
+			// 					.join("");
+
+			// 				wrap.innerHTML = cardsHTML + placeholderHTML;
+
+			// 				lucide.createIcons();
+			// 				renderAreaPagination(totalPages);
+
+			// 				const showingEnd = Math.min(start + AREA_PER_PAGE, DELIVERY_AREAS.length);
+			// 				document.getElementById("area-showing-label").textContent = `Menampilkan ${start + 1}-${showingEnd} dari ${DELIVERY_AREAS.length} area`;
+
+			// 				const waLink = document.getElementById("area-wa-link");
+			// 				if (waLink) {
+			// 					const text = encodeURIComponent("Halo, apakah ada layanan pengiriman ke area saya?");
+			// 					waLink.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${text}`;
+			// 				}
+			// 			}
 			function renderDeliveryAreas() {
 				const wrap = document.getElementById("area-grid");
 				if (!wrap) return;
 
 				const AREA_PER_PAGE = getAreaPerPage();
 				const totalPages = Math.ceil(DELIVERY_AREAS.length / AREA_PER_PAGE);
-				const start = (areaCurrentPage - 1) * AREA_PER_PAGE;
-				const pageItems = DELIVERY_AREAS.slice(start, start + AREA_PER_PAGE);
 
-				const cardsHTML = pageItems
-					.map(
-						(area) => `
+				// bangun SEMUA halaman sekaligus sebagai swiper-slide, supaya bisa digeser bebas
+				let slidesHTML = "";
+				for (let page = 0; page < totalPages; page++) {
+					const start = page * AREA_PER_PAGE;
+					const pageItems = DELIVERY_AREAS.slice(start, start + AREA_PER_PAGE);
+
+					const cardsHTML = pageItems
+						.map(
+							(area) => `
 <div class="bg-white border border-sand rounded-2xl p-4 h-full flex flex-col">
   <div class="flex items-center gap-3 mb-2">
     <div class="w-8 h-8 rounded-full bg-terracotta/20 flex items-center justify-center shrink-0">
@@ -1291,16 +1360,13 @@
   <p class="text-muted text-xs mb-1 line-clamp-2 min-h-[2rem]">${area.desc}</p>
   <span class="text-terracotta text-xs font-semibold mt-auto pt-1">${area.eta}</span>
 </div>`,
-					)
-					.join("");
+						)
+						.join("");
 
-				// kartu placeholder dengan struktur & padding SAMA PERSIS seperti kartu asli
-				// (cuma disembunyikan visualnya), supaya tinggi barisnya identik dan
-				// panah pagination di bawah grid tidak ikut naik saat item di halaman terakhir sedikit
-				const emptyCount = AREA_PER_PAGE - pageItems.length;
-				const placeholderHTML = Array.from({ length: emptyCount })
-					.map(
-						() => `
+					const emptyCount = AREA_PER_PAGE - pageItems.length;
+					const placeholderHTML = Array.from({ length: emptyCount })
+						.map(
+							() => `
 <div class="invisible pointer-events-none bg-white border border-sand rounded-2xl p-4 h-full flex flex-col" aria-hidden="true">
   <div class="flex items-center gap-3 mb-2">
     <div class="w-8 h-8 rounded-full bg-terracotta/20 flex items-center justify-center shrink-0">
@@ -1311,22 +1377,59 @@
   <p class="text-muted text-xs mb-1 line-clamp-2 min-h-[2rem]">-</p>
   <span class="text-terracotta text-xs font-semibold mt-auto pt-1">-</span>
 </div>`,
-					)
-					.join("");
+						)
+						.join("");
 
-				wrap.innerHTML = cardsHTML + placeholderHTML;
+					const gridClass = AREA_PER_PAGE === 2 ? "grid grid-cols-2 gap-3" : "grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4";
 
+					slidesHTML += `<div class="swiper-slide"><div class="${gridClass} h-full">${cardsHTML}${placeholderHTML}</div></div>`;
+				}
+
+				wrap.innerHTML = slidesHTML;
 				lucide.createIcons();
-				renderAreaPagination(totalPages);
 
-				const showingEnd = Math.min(start + AREA_PER_PAGE, DELIVERY_AREAS.length);
-				document.getElementById("area-showing-label").textContent = `Menampilkan ${start + 1}-${showingEnd} dari ${DELIVERY_AREAS.length} area`;
+				// init / re-init swiper
+				if (window.areaSwiperInstance) {
+					window.areaSwiperInstance.destroy(true, true);
+					window.areaSwiperInstance = null;
+				}
+				window.areaSwiperInstance = new Swiper(".area-swiper", {
+					slidesPerView: 1,
+					spaceBetween: 16,
+					grabCursor: true,
+					observer: true,
+					observeParents: true,
+					mousewheel: {
+						forceToAxis: true,
+						sensitivity: 1,
+						releaseOnEdges: true,
+					},
+					on: {
+						slideChange: function () {
+							areaCurrentPage = this.activeIndex + 1;
+							renderAreaPagination(totalPages);
+							updateAreaShowingLabel(totalPages, AREA_PER_PAGE);
+						},
+					},
+				});
+
+				window.areaSwiperInstance.slideTo(areaCurrentPage - 1, 0);
+
+				renderAreaPagination(totalPages);
+				updateAreaShowingLabel(totalPages, AREA_PER_PAGE);
 
 				const waLink = document.getElementById("area-wa-link");
 				if (waLink) {
 					const text = encodeURIComponent("Halo, apakah ada layanan pengiriman ke area saya?");
 					waLink.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${text}`;
 				}
+			}
+
+			function updateAreaShowingLabel(totalPages, AREA_PER_PAGE) {
+				const start = (areaCurrentPage - 1) * AREA_PER_PAGE;
+				const showingEnd = Math.min(start + AREA_PER_PAGE, DELIVERY_AREAS.length);
+				const label = document.getElementById("area-showing-label");
+				if (label) label.textContent = `Menampilkan ${start + 1}-${showingEnd} dari ${DELIVERY_AREAS.length} area`;
 			}
 
 			function getAreaPaginationRange(current, total) {
@@ -1387,27 +1490,34 @@
 			// function goAreaPage(page) {
 			// 	const totalPages = Math.ceil(DELIVERY_AREAS.length / AREA_PER_PAGE);
 			// 	if (page < 1 || page > totalPages || page === areaCurrentPage) return;
+			// function goAreaPage(page) {
+			// 	const totalPages = Math.ceil(DELIVERY_AREAS.length / getAreaPerPage());
+			// 	if (page < 1 || page > totalPages || page === areaCurrentPage) return;
+
+			// 	document.getElementById("area-kirim").scrollIntoView({ behavior: "smooth", block: "start" });
+
+			// 	const direction = page > areaCurrentPage ? 1 : -1;
+			// 	const grid = document.getElementById("area-grid");
+
+			// 	gsap.killTweensOf(grid);
+			// 	gsap.to(grid, {
+			// 		opacity: 0,
+			// 		x: -40 * direction,
+			// 		duration: 0.3,
+			// 		ease: "power2.in",
+			// 		onComplete: () => {
+			// 			areaCurrentPage = page;
+			// 			renderDeliveryAreas();
+			// 			gsap.fromTo(grid, { opacity: 0, x: 40 * direction }, { opacity: 1, x: 0, duration: 0.45, ease: "power3.out" });
+			// 		},
+			// 	});
+			// }
 			function goAreaPage(page) {
 				const totalPages = Math.ceil(DELIVERY_AREAS.length / getAreaPerPage());
 				if (page < 1 || page > totalPages || page === areaCurrentPage) return;
-
-				document.getElementById("area-kirim").scrollIntoView({ behavior: "smooth", block: "start" });
-
-				const direction = page > areaCurrentPage ? 1 : -1;
-				const grid = document.getElementById("area-grid");
-
-				gsap.killTweensOf(grid);
-				gsap.to(grid, {
-					opacity: 0,
-					x: -40 * direction,
-					duration: 0.3,
-					ease: "power2.in",
-					onComplete: () => {
-						areaCurrentPage = page;
-						renderDeliveryAreas();
-						gsap.fromTo(grid, { opacity: 0, x: 40 * direction }, { opacity: 1, x: 0, duration: 0.45, ease: "power3.out" });
-					},
-				});
+				if (window.areaSwiperInstance) {
+					window.areaSwiperInstance.slideTo(page - 1);
+				}
 			}
 
 			/* ============================================================
@@ -1512,22 +1622,33 @@
 					window.testimoniSwiperInstance.destroy(true, true);
 					window.testimoniSwiperInstance = null;
 				}
+				// window.testimoniSwiperInstance = new Swiper(".testimoni-swiper", {
+				// 	slidesPerView: 2,
+				// 	spaceBetween: 12,
+				// 	grabCursor: true,
+				// 	observer: true,
+				// 	observeParents: true,
+				// 	freeMode: {
+				// 		enabled: true,
+				// 		momentum: false,
+				// 	},
+				// 	speed: 400,
+				// 	mousewheel: {
+				// 		forceToAxis: true,
+				// 		sensitivity: 1,
+				// 		releaseOnEdges: true,
+				// 	},
+				// 	breakpoints: {
+				// 		640: { spaceBetween: 20 },
+				// 	},
+				// });
 				window.testimoniSwiperInstance = new Swiper(".testimoni-swiper", {
 					slidesPerView: 2,
 					spaceBetween: 12,
-					grabCursor: true,
+					allowTouchMove: false,
 					observer: true,
 					observeParents: true,
-					freeMode: {
-						enabled: true,
-						momentum: false,
-					},
 					speed: 400,
-					mousewheel: {
-						forceToAxis: true,
-						sensitivity: 1,
-						releaseOnEdges: true,
-					},
 					breakpoints: {
 						640: { spaceBetween: 20 },
 					},
@@ -1539,6 +1660,78 @@
 				});
 			}
 
+			// function startTestimoniMarquee(swiper) {
+			// 	if (!swiper) return;
+
+			// 	if (window.testimoniMarqueeRAF) {
+			// 		cancelAnimationFrame(window.testimoniMarqueeRAF);
+			// 		window.testimoniMarqueeRAF = null;
+			// 	}
+
+			// 	const SPEED_PX_PER_MS = 0.035;
+			// 	let isPaused = false;
+			// 	let resumeTimeout = null;
+			// 	let lastTime = null;
+
+			// 	// lebar 1 set data asli (sebelum duplikasi) = posisi slide ke-(jumlah asli) di slidesGrid
+			// 	// dipakai untuk tahu kapan harus "loncat" balik supaya terlihat menyambung mulus
+			// 	function getSetWidth() {
+			// 		const originalCount = TESTIMONIALS.length;
+			// 		if (swiper.slidesGrid && swiper.slidesGrid[originalCount] !== undefined) {
+			// 			return swiper.slidesGrid[originalCount];
+			// 		}
+			// 		// fallback kalau slidesGrid belum siap
+			// 		return swiper.virtualSize / 2;
+			// 	}
+
+			// 	function tick(time) {
+			// 		if (lastTime === null) lastTime = time;
+			// 		const delta = time - lastTime;
+			// 		lastTime = time;
+
+			// 		if (!isPaused && swiper && !swiper.destroyed) {
+			// 			const setWidth = getSetWidth();
+			// 			let newTranslate = swiper.translate - delta * SPEED_PX_PER_MS;
+
+			// 			// begitu sudah melewati 1 set penuh (setWidth), loncat balik sejauh setWidth
+			// 			// karena set kedua identik dengan set pertama, loncatan ini tidak terlihat
+			// 			if (Math.abs(newTranslate) >= setWidth) {
+			// 				newTranslate += setWidth;
+			// 			}
+
+			// 			swiper.setTranslate(newTranslate);
+			// 			swiper.updateProgress(newTranslate);
+			// 			swiper.updateActiveIndex();
+			// 			swiper.updateSlidesClasses();
+			// 		}
+
+			// 		window.testimoniMarqueeRAF = requestAnimationFrame(tick);
+			// 	}
+
+			// 	function pause() {
+			// 		isPaused = true;
+			// 		if (resumeTimeout) clearTimeout(resumeTimeout);
+			// 	}
+
+			// 	function scheduleResume() {
+			// 		if (resumeTimeout) clearTimeout(resumeTimeout);
+			// 		resumeTimeout = setTimeout(() => {
+			// 			isPaused = false;
+			// 			lastTime = null;
+			// 		}, 1200);
+			// 	}
+
+			// 	swiper.on("touchStart", pause);
+			// 	swiper.on("sliderFirstMove", pause);
+			// 	swiper.on("touchEnd", scheduleResume);
+
+			// 	if (swiper.el) {
+			// 		swiper.el.addEventListener("mouseenter", pause);
+			// 		swiper.el.addEventListener("mouseleave", scheduleResume);
+			// 	}
+
+			// 	window.testimoniMarqueeRAF = requestAnimationFrame(tick);
+			// }
 			function startTestimoniMarquee(swiper) {
 				if (!swiper) return;
 
@@ -1548,18 +1741,13 @@
 				}
 
 				const SPEED_PX_PER_MS = 0.035;
-				let isPaused = false;
-				let resumeTimeout = null;
 				let lastTime = null;
 
-				// lebar 1 set data asli (sebelum duplikasi) = posisi slide ke-(jumlah asli) di slidesGrid
-				// dipakai untuk tahu kapan harus "loncat" balik supaya terlihat menyambung mulus
 				function getSetWidth() {
 					const originalCount = TESTIMONIALS.length;
 					if (swiper.slidesGrid && swiper.slidesGrid[originalCount] !== undefined) {
 						return swiper.slidesGrid[originalCount];
 					}
-					// fallback kalau slidesGrid belum siap
 					return swiper.virtualSize / 2;
 				}
 
@@ -1568,12 +1756,10 @@
 					const delta = time - lastTime;
 					lastTime = time;
 
-					if (!isPaused && swiper && !swiper.destroyed) {
+					if (swiper && !swiper.destroyed) {
 						const setWidth = getSetWidth();
 						let newTranslate = swiper.translate - delta * SPEED_PX_PER_MS;
 
-						// begitu sudah melewati 1 set penuh (setWidth), loncat balik sejauh setWidth
-						// karena set kedua identik dengan set pertama, loncatan ini tidak terlihat
 						if (Math.abs(newTranslate) >= setWidth) {
 							newTranslate += setWidth;
 						}
@@ -1585,28 +1771,6 @@
 					}
 
 					window.testimoniMarqueeRAF = requestAnimationFrame(tick);
-				}
-
-				function pause() {
-					isPaused = true;
-					if (resumeTimeout) clearTimeout(resumeTimeout);
-				}
-
-				function scheduleResume() {
-					if (resumeTimeout) clearTimeout(resumeTimeout);
-					resumeTimeout = setTimeout(() => {
-						isPaused = false;
-						lastTime = null;
-					}, 1200);
-				}
-
-				swiper.on("touchStart", pause);
-				swiper.on("sliderFirstMove", pause);
-				swiper.on("touchEnd", scheduleResume);
-
-				if (swiper.el) {
-					swiper.el.addEventListener("mouseenter", pause);
-					swiper.el.addEventListener("mouseleave", scheduleResume);
 				}
 
 				window.testimoniMarqueeRAF = requestAnimationFrame(tick);
