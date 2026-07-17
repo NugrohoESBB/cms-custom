@@ -264,7 +264,8 @@
 			<!-- <div class="bg-forest text-cream text-center text-xs md:text-sm py-2 px-4 font-medium tracking-wide">Gratis konsultasi perawatan tanaman • Pesan sebelum jam 14.00 dikirim hari ini</div> -->
 
 			<!-- ============ NAVBAR ============ -->
-			<header class="sticky top-0 z-30 bg-cream border-b border-sand">
+			<!-- <header class="sticky top-0 z-30 bg-cream border-b border-sand"> -->
+			<header id="site-header" class="sticky top-0 z-30 bg-cream border-b border-sand transition-transform duration-300">
 				<div class="max-w-7xl mx-auto px-4 sm:px-5 md:px-8 h-16 sm:h-20 flex items-center justify-between">
 					<a href="#" class="font-display text-2xl md:text-3xl font-semibold tracking-tight text-forest" onclick="goPage('home')">AKAR<span class="text-terracotta">.</span></a>
 
@@ -2471,6 +2472,43 @@
 					}
 				});
 			}
+
+			/* ============================================================
+   HIDE/SHOW NAVBAR ON SCROLL
+   ============================================================ */
+			(function () {
+				const header = document.getElementById("site-header");
+				if (!header) return;
+
+				let lastScrollY = window.scrollY;
+				let ticking = false;
+				const headerHeight = () => header.offsetHeight;
+
+				function onScroll() {
+					const currentScrollY = window.scrollY;
+
+					// selalu tampil kalau masih dekat atas halaman
+					if (currentScrollY <= headerHeight()) {
+						header.style.transform = "translateY(0)";
+					} else if (currentScrollY > lastScrollY) {
+						// scroll ke bawah -> sembunyikan
+						header.style.transform = `translateY(-${headerHeight()}px)`;
+					} else {
+						// scroll ke atas -> tampilkan
+						header.style.transform = "translateY(0)";
+					}
+
+					lastScrollY = currentScrollY;
+					ticking = false;
+				}
+
+				window.addEventListener("scroll", () => {
+					if (!ticking) {
+						window.requestAnimationFrame(onScroll);
+						ticking = true;
+					}
+				});
+			})();
 
 			let lastAreaBreakpoint = window.innerWidth < 640;
 			window.addEventListener("resize", () => {
