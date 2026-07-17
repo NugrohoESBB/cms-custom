@@ -1459,13 +1459,13 @@
           <img src="https://picsum.photos/seed/${p.img}/300/300" class="w-full h-full object-cover" alt="${p.name}">
           <span class="absolute top-1.5 left-1.5 bg-cream/95 text-[8px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full text-forest">${p.category}</span>
         </div>
-        <p class="text-xs font-semibold leading-snug line-clamp-2 mb-1 h-[2.25rem]">${p.name}</p>
-        <div class="flex flex-col gap-0.5 mb-2 h-[2.1rem] justify-center">
-          <p class="text-forest font-display text-sm">${rupiah(p.price)}</p>
-          ${disc > 0 ? `<div class="flex items-center gap-1.5"><p class="text-muted text-[10px] line-through">${rupiah(p.originalPrice)}</p>
-          <span class="bg-terracotta/10 text-terracotta text-[9px] font-bold px-1.5 py-0.5 rounded-full">-${disc}%</span></div>` : ""}
+        <p class="text-xs font-semibold leading-snug line-clamp-2 mb-1 h-[2.1rem]">${p.name}</p>
+        <p class="text-forest font-display text-sm">${rupiah(p.price)}</p>
+        <div class="flex items-center gap-1.5 mt-0.5 h-[1.1rem]">
+          ${disc > 0 ? `<p class="text-muted text-[10px] line-through">${rupiah(p.originalPrice)}</p>
+          <span class="bg-terracotta/10 text-terracotta text-[9px] font-bold px-1.5 py-0.5 rounded-full">-${disc}%</span>` : ""}
         </div>
-        <button onclick="cardAdd(${p.id})" class="mt-auto w-full h-9 rounded-full bg-forest text-cream text-xs font-semibold flex items-center justify-center gap-1"><i data-lucide="plus" class="w-3.5 h-3.5"></i> Tambah</button>
+        <button onclick="cardAdd(${p.id})" class="mt-2 w-full h-9 rounded-full bg-forest text-cream text-xs font-semibold flex items-center justify-center gap-1 shrink-0"><i data-lucide="plus" class="w-3.5 h-3.5"></i> Tambah</button>
       </div>
     </div>`;
 					})
