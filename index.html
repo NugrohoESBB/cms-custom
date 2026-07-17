@@ -1465,7 +1465,7 @@
           ${disc > 0 ? `<p class="text-muted text-[10px] line-through">${rupiah(p.originalPrice)}</p>
           <span class="bg-terracotta/10 text-terracotta text-[9px] font-bold px-1.5 py-0.5 rounded-full">-${disc}%</span>` : ""}
         </div>
-        <button onclick="cardAdd(${p.id})" class="mt-2 w-full h-9 rounded-full bg-forest text-cream text-xs font-semibold flex items-center justify-center gap-1 shrink-0 leading-none"><i data-lucide="plus" class="w-3.5 h-3.5 shrink-0"></i><span>Tambah</span></button>
+        <button onclick="cardAdd(${p.id})" class="mt-2 w-full h-9 rounded-full bg-forest text-cream text-xs font-semibold flex items-center justify-center gap-1 shrink-0"><span class="text-sm leading-none">+</span><span>Tambah</span></button>
       </div>
     </div>`;
 					})
