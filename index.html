@@ -264,7 +264,7 @@
 						</button>
 						<button aria-label="Buka keranjang" onclick="goPage('cart')" class="relative w-10 h-10 rounded-full flex items-center justify-center hover:bg-sand transition-colors">
 							<i data-lucide="shopping-basket" class="w-5 h-5"></i>
-							<span id="cart-count" class="absolute -top-1 -right-1 bg-terracotta text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center">0</span>
+							<span id="cart-count" class="hidden absolute -top-1 -right-1 bg-terracotta text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center">0</span>
 						</button>
 					</div>
 				</div>
@@ -1507,12 +1507,10 @@
         <span class="absolute top-3 left-3 bg-cream/95 text-[10px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full text-forest">${p.category}</span>
         <div id="pctrl-${p.id}">${cardControlHTML(p)}</div>
       </div>
-      <h3 class="font-semibold text-sm md:text-base leading-snug mb-1 line-clamp-2 min-h-[2.5rem]">${p.name}</h3>
-      <div class="flex flex-col gap-1">
-        <p class="text-forest font-display text-lg">${rupiah(p.price)}</p>
-        ${disc > 0 ? `<div class="flex items-center gap-2"><p class="text-muted text-xs line-through">${rupiah(p.originalPrice)}</p>
-        <span class="bg-terracotta/10 text-terracotta text-[10px] font-bold px-1.5 py-0.5 rounded-full">-${disc}%</span></div>` : `<div class="h-[1.35rem]"></div>`}
-      </div>
+      <h3 class="font-semibold text-sm md:text-base leading-snug mb-1 line-clamp-2">${p.name}</h3>
+      <p class="text-forest font-display text-lg">${rupiah(p.price)}</p>
+      ${disc > 0 ? `<div class="flex items-center gap-2 mt-0.5"><p class="text-muted text-xs line-through">${rupiah(p.originalPrice)}</p>
+      <span class="bg-terracotta/10 text-terracotta text-[10px] font-bold px-1.5 py-0.5 rounded-full">-${disc}%</span></div>` : ""}
     </div>
   `;
 					})
@@ -1638,6 +1636,7 @@
 				const newCount = cart.reduce((s, i) => s + i.qty, 0);
 				const badgeEl = document.getElementById("cart-count");
 				if (badgeEl) {
+					badgeEl.classList.toggle("hidden", newCount === 0);
 					animateCounter(badgeEl, prevCount, newCount, (n) => Math.round(n));
 					pulseQty(badgeEl, "#FFFFFF");
 				}
@@ -1655,7 +1654,9 @@
 
 			function updateCartCount() {
 				const count = cart.reduce((s, i) => s + i.qty, 0);
-				document.getElementById("cart-count").textContent = count;
+				const badgeEl = document.getElementById("cart-count");
+				badgeEl.textContent = count;
+				badgeEl.classList.toggle("hidden", count === 0);
 			}
 
 			function renderCart() {
@@ -1773,6 +1774,7 @@
 					animateCounter(subtotalEl, prevSubtotal, cartSubtotal(), (n) => "Rp " + Math.round(n).toLocaleString("id-ID"));
 				}
 				if (badgeEl) {
+					badgeEl.classList.toggle("hidden", cart.reduce((s, i) => s + i.qty, 0) === 0);
 					pulseQty(badgeEl, "#FFFFFF");
 				}
 
